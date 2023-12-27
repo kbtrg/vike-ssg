@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const Wrapper: React.FC = ({ children }) => {
+const WrapperComponent: React.FC = ({ children }) => {
   const [num, setNum] = useState(0)
 
   return (
@@ -13,4 +13,4 @@ const Wrapper: React.FC = ({ children }) => {
   )
 }
 
-export default Wrapper
+export default WrapperComponent

@@ -1,15 +1,15 @@
 // Environment: browser
 
 import { hydrate } from "react-dom";
-import Wrapper from "../components/Wapper";
+import WrapperComponent from "../components/WapperComponent";
 
 async function onRenderClient(pageContext: any) {
-  const { Page, data } = pageContext
+  const { Page, pageProps } = pageContext
 
   hydrate(
-    <Wrapper>
-      <Page {...data} />
-    </Wrapper>,
+    <WrapperComponent>
+      <Page {...pageProps} />
+    </WrapperComponent>,
     document.getElementById("page-view"),
   );
 }
