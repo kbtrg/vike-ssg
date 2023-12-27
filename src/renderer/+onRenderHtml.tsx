@@ -5,19 +5,16 @@ import { escapeInject, dangerouslySkipEscape } from "vike/server";
 
 async function onRenderHtml(pageContext: any) {
   const { Page, pageProps } = pageContext;
-  const viewHtml = renderToString(
-    <Page {...pageProps} />
-  );
-
-  const title = "Vite SSR";
+  const viewHtml = dangerouslySkipEscape(
+    renderToString(
+      <Page {...pageProps} />
+    )
+  )
 
   return escapeInject`<!DOCTYPE html>
     <html>
-      <head>
-        <title>${title}</title>
-      </head>
       <body>
-        <div id="page-view">${dangerouslySkipEscape(viewHtml)}</div>
+        <div id="page-view">${viewHtml}</div>
       </body>
     </html>`;
 }

@@ -1,6 +1,5 @@
 import react from "@vitejs/plugin-react-swc";
 import { defineConfig } from "vite";
-import { sentryVitePlugin } from "@sentry/vite-plugin";
 import vike from "vike/plugin"
 
 export default defineConfig({
@@ -16,8 +15,9 @@ export default defineConfig({
   },
   plugins: [
     react(),
+    // SSR
     vike(),
-    // SSG有効化
+    // SSG
     // vike({ prerender: true }),
   ],
   test: {
