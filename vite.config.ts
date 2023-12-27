@@ -16,9 +16,13 @@ export default defineConfig({
   plugins: [
     react(),
     // SSR
-    vike(),
+    // vike(),
     // SSG
-    // vike({ prerender: true }),
+    vike({
+      prerender: {
+        partial: true, // 部分的なSSGはこの設定かと思ったが、単なる警告を出すためのoptionらしい...
+      }
+    }),
   ],
   test: {
     include: ["src/**/*.test.{ts,tsx}"],
