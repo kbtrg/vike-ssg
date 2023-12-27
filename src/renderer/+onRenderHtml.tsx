@@ -2,14 +2,11 @@
 
 import { renderToString } from "react-dom/server";
 import { escapeInject, dangerouslySkipEscape } from "vike/server";
-import WrapperComponent from "../components/WapperComponent";
 
 async function onRenderHtml(pageContext: any) {
   const { Page, pageProps } = pageContext;
   const viewHtml = renderToString(
-    <WrapperComponent>
-      <Page {...pageProps} />
-    </WrapperComponent>
+    <Page {...pageProps} />
   );
 
   const title = "Vite SSR";

@@ -1,6 +1,10 @@
+import WrapperComponent from "../../components/WapperComponent"
+
 const Index = () => {
   return (
-    <div>Index</div>
+    <WrapperComponent>
+      <div>Index</div>
+    </WrapperComponent>
   )
 }
 
